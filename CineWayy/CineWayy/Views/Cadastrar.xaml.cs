@@ -16,10 +16,7 @@ namespace CineWayy.Views
             InitializeComponent();
         }
 
-        private CadastrarViewModel GetViewModel()
-        {
-            return (CadastrarViewModel)BindingContext;
-        }
+        private CadastrarViewModel GetViewModel() => (CadastrarViewModel)BindingContext;
 
         private void LimparCampos()
         {

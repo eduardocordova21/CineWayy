@@ -10,32 +10,32 @@ namespace CineWayy.BancoDeDados
     {
         public void Atualizar(SessaoVO obj)
         {
-            GetConexao().Update(obj);
+            AbrirConexao().Update(obj);
         }
 
         public void Cadastrar(SessaoVO obj)
         {
-            GetConexao().Insert(obj);
+            AbrirConexao().Insert(obj);
         }
 
         public List<SessaoVO> Consultar()
         {
-            return GetConexao().Table<SessaoVO>().ToList();
+            return AbrirConexao().Table<SessaoVO>().ToList();
         }
 
         public void Excluir(SessaoVO obj)
         {
-            GetConexao().Delete(obj);
+            AbrirConexao().Delete(obj);
         }
 
         public List<SessaoVO> Pesquisar(string palavra)
         {
-            return GetConexao().Table<SessaoVO>().Where(s => s.Date.ToShortDateString().Contains(palavra)).ToList();
+            return AbrirConexao().Table<SessaoVO>().Where(s => s.Date.ToShortDateString().Contains(palavra)).ToList();
         }
 
         public SessaoVO PesquisarPorID(int ID)
         {
-            return GetConexao().Table<SessaoVO>().Where(s => s.ID == ID).FirstOrDefault();
+            return AbrirConexao().Table<SessaoVO>().Where(s => s.ID == ID).FirstOrDefault();
         }
     }
 }

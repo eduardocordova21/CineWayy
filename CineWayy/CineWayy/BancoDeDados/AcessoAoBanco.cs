@@ -23,9 +23,14 @@ namespace CineWayy.BancoDeDados
             _conexao.CreateTable<SessaoVO>();
         }
 
-        public SQLiteConnection GetConexao()
+        public SQLiteConnection AbrirConexao()
         {
             return _conexao;
+        }
+
+        public void FecharConexao()
+        {
+            _conexao.Close();
         }
     }
 }

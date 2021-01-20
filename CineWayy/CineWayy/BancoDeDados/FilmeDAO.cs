@@ -9,32 +9,32 @@ namespace CineWayy.BancoDeDados
     {
         public void Atualizar(FilmeVO obj)
         {
-            GetConexao().Update(obj);
+            AbrirConexao().Update(obj);
         }
 
         public void Cadastrar(FilmeVO obj)
         {
-            GetConexao().Insert(obj);
+            AbrirConexao().Insert(obj);
         }
 
         public List<FilmeVO> Consultar()
         {
-            return GetConexao().Table<FilmeVO>().ToList();
+            return AbrirConexao().Table<FilmeVO>().ToList();
         }
 
         public void Excluir(FilmeVO obj)
         {
-            GetConexao().Delete(obj);
+            AbrirConexao().Delete(obj);
         }
 
         public List<FilmeVO> Pesquisar(string palavra)
         {
-            return GetConexao().Table<FilmeVO>().Where(f => f.Titulo.Contains(palavra)).ToList();
+            return AbrirConexao().Table<FilmeVO>().Where(f => f.Titulo.Contains(palavra)).ToList();
         }
 
         public FilmeVO PesquisarPorID(int ID)
         {
-            return GetConexao().Table<FilmeVO>().Where(f => f.ID == ID).FirstOrDefault();
+            return AbrirConexao().Table<FilmeVO>().Where(f => f.ID == ID).FirstOrDefault();
         }
     }
 }

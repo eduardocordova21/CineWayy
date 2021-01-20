@@ -10,32 +10,47 @@ namespace CineWayy.BancoDeDados
     {
         public void Atualizar(UsuarioVO obj)
         {
-            GetConexao().Update(obj);
+            AbrirConexao().Update(obj);
         }
 
         public void Cadastrar(UsuarioVO obj)
         {
-            GetConexao().Insert(obj);
+            AbrirConexao().Insert(obj);
+        }
+
+        internal bool ValidarDadosDeLoginDoUsuario(string login, string senha)
+        {
+            var usuario = AbrirConexao().Table<UsuarioVO>().Where(u => u.Login == login).Where(u => u.Senha == senha).FirstOrDefault();
+
+            if (usuario != null)
+                return true;
+
+            return false;
+        }
+
+        internal bool ValidarSenhaDoUsuario(string senha)
+        {
+            throw new NotImplementedException();
         }
 
         public List<UsuarioVO> Consultar()
         {
-            return GetConexao().Table<UsuarioVO>().ToList();
+            return AbrirConexao().Table<UsuarioVO>().ToList();
         }
 
         public void Excluir(UsuarioVO obj)
         {
-            GetConexao().Delete(obj);
+            AbrirConexao().Delete(obj);
         }
 
         public List<UsuarioVO> Pesquisar(string palavra)
         {
-            return GetConexao().Table<UsuarioVO>().Where(u => u.Login.Contains(palavra)).ToList();
+            return AbrirConexao().Table<UsuarioVO>().Where(u => u.Login.Contains(palavra)).ToList();
         }
 
         public UsuarioVO PesquisarPorID(int ID)
         {
-            return GetConexao().Table<UsuarioVO>().Where(u => u.ID == ID).FirstOrDefault();
+            return AbrirConexao().Table<UsuarioVO>().Where(u => u.ID == ID).FirstOrDefault();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CineWayy.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,19 @@ namespace CineWayy.Views
             InitializeComponent();
         }
 
+        private LoginViewModel GetViewModel() => (LoginViewModel)BindingContext;
+
         private void BotarCadastrar_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new Cadastrar());
+        }
+
+        private void BotaoEntrar_Clicked(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(EntradaDeLogin.Text) == false && string.IsNullOrWhiteSpace(EntradaDeSenha.Text) == false && GetViewModel().ValidarDadosDeLoginDoUsuario(EntradaDeLogin.Text, EntradaDeSenha.Text))
+                Navigation.PushAsync(new MainPage());
+            else
+                DisplayAlert("AVISO", "Credenciais incorretas, por favor, tente novamente.", "Fechar");
         }
     }
 }
