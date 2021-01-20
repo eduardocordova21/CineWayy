@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CineWayy.Views.Login"
+             Visual="Material"
+             BackgroundImageSource="imagem_de_fundo.png"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+
+        <FlexLayout Padding="20"
+                    Direction="Column"
+                    JustifyContent="Center">
+
+            <Entry x:Name="EntradaDeLogin"
+                   Placeholder="Login"
+                   HorizontalTextAlignment="Center" 
+                   Margin="10"/>
+
+            <Entry x:Name="EntradaDeSenha"
+                   Placeholder="Senha"
+                   HorizontalTextAlignment="Center"
+                   Margin="10"
+                   IsPassword="True"/>
+
+            <Button x:Name="BotaoEntrar"
+                    Text="Entrar"
+                    TextColor="White"
+                    BackgroundColor="#DE3A34"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    CornerRadius="20"
+                    Margin="10"/>
+
+            <Button x:Name="BotarCadastrar"
+                    Text="Cadastrar"
+                    TextColor="White"
+                    BackgroundColor="#DE3A34"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    CornerRadius="20"
+                    Margin="10"
+                    Clicked="BotarCadastrar_Clicked"/>
+            
+        </FlexLayout>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

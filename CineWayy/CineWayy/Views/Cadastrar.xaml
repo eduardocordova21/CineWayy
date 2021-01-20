@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CineWayy.Views.Cadastrar"
+             xmlns:viewModel="clr-namespace:CineWayy.ViewModels"
+             Visual="Material"
+             Title="Cadastrar">
+
+    <ContentPage.BindingContext>
+        <viewModel:CadastrarViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+
+        <FlexLayout Direction="Column"
+                    Margin="20"
+                    JustifyContent="Center">
+
+            <Entry x:Name="EntradaDeLogin"
+                   Placeholder="Digite seu Login"
+                   Margin="10"/>
+
+            <Entry x:Name="EntradaDeSenha"
+                   Placeholder="Digite sua Senha"
+                   IsPassword="True"
+                   Margin="10"/>
+
+            <Picker x:Name="EntradaDeTipoDeUsuario"
+                    Title="Selecione o seu tipo de usuário"
+                    ItemsSource="{Binding TiposDeUsuarios}"
+                    Margin="10"/>
+
+            <Button x:Name="SalvarCadastro"
+                    Text="Salvar"
+                    TextColor="White"
+                    BackgroundColor="#DE3A34"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    CornerRadius="20"
+                    Margin="10"
+                    Clicked="SalvarCadastro_Clicked"/>
+
+            <Button x:Name="ListarUsuarios"
+                    Text="Listar"
+                    TextColor="White"
+                    BackgroundColor="#DE3A34"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    CornerRadius="20"
+                    Margin="10"
+                    Clicked="ListarUsuarios_Clicked"/>
+
+        </FlexLayout>
+        
+    </ContentPage.Content>
+    
+</ContentPage>
