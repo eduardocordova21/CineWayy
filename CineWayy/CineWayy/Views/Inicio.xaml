@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CineWayy.Views.Inicio"
+             Title="Início">
+  
+    <ContentPage.Content>
+
+        <FlexLayout Direction="Column"
+                    JustifyContent="Center"
+                    Margin="20">
+
+            <Frame Padding="15" CornerRadius="20" BackgroundColor="#DE3A34">
+                <Label Text="Bem-vindo ao gerenciador de cinema da PrintWayy!"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="22"
+                       HorizontalTextAlignment="Center"
+                       TextTransform="Uppercase"/> 
+            </Frame>
+
+            <Label FontSize="16" 
+                   FontAttributes="Bold" 
+                   Margin="20" 
+                   HorizontalTextAlignment="Center" 
+                   LineBreakMode="WordWrap"
+                   Text="O gerenciador de cinema é uma ferramenta responsável por criar, editar e deletar recursos, bem como visualizar relatórios."/>
+
+            <Label FontSize="16" 
+                   FontAttributes="Bold" 
+                   Margin="8" 
+                   HorizontalTextAlignment="Center" 
+                   LineBreakMode="WordWrap"
+                   Text="Funções disponíveis até o momento:"/>
+          
+            <Label FontSize="16" 
+                   FontAttributes="Bold" 
+                   Margin="8" 
+                   HorizontalTextAlignment="Center" 
+                   LineBreakMode="WordWrap"
+                   Text="Gerenciamento de filmes"/>
+
+            <Label FontSize="16" 
+                   FontAttributes="Bold" 
+                   Margin="8" 
+                   HorizontalTextAlignment="Center" 
+                   LineBreakMode="WordWrap"
+                   Text="Gerenciamento de sessões"/>
+
+            <Label FontSize="16" 
+                   FontAttributes="Bold" 
+                   Margin="8" 
+                   HorizontalTextAlignment="Center" 
+                   LineBreakMode="WordWrap"
+                   Text="Lista de salas"/>
+
+        </FlexLayout>
+
+    </ContentPage.Content>
+    
+</ContentPage>
