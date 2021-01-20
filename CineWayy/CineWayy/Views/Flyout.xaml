@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CineWayy.Views.Flyout"
+            xmlns:paginas="clr-namespace:CineWayy.Views">
+    
+    <FlyoutPage.Flyout>
+        <paginas:MenuLateral />
+    </FlyoutPage.Flyout>
+
+    <FlyoutPage.Detail>
+        <paginas:Inicio />
+    </FlyoutPage.Detail>
+
+</FlyoutPage>
