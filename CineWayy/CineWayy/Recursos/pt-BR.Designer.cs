@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CineWayy.Resources {
+namespace CineWayy.Recursos {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace CineWayy.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CineWayy.Resources.pt-BR", typeof(pt_BR).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CineWayy.Recursos.pt-BR", typeof(pt_BR).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

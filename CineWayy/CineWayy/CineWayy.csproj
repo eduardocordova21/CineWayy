@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\pt-BR.Designer.cs">
+    <Compile Update="Recursos\pt-BR.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>pt-BR.resx</DependentUpon>
@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\pt-BR.resx">
+    <EmbeddedResource Update="Recursos\pt-BR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>pt-BR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
