@@ -1,12 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CineWayy.Views.MenuLateral">
+             xmlns:local="clr-namespace:CineWayy.Views"
+             xmlns:conversor="clr-namespace:CineWayy.Conversores"
+             xmlns:viewModel="clr-namespace:CineWayy.ViewModels"
+             x:Class="CineWayy.Views.MenuLateral"
+             Title="Menu Lateral">
+
+    <ContentPage.BindingContext>
+        <viewModel:MenuLateralViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conversor:ByteArrayParaCaminhoDaImagemConverter x:Key="ByteArrayParaCaminhoDaImagemConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
+
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <ListView x:Name="listView" x:FieldModifier="public" ItemsSource="{Binding ListaIconesDosMenus}">
+                     
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding NomeDoMenu}"/>
+                                <Image Source="{Binding CaminhoCompletoDoIcone, Converter={StaticResource ByteArrayParaCaminhoDaImagemConverter}}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            
+            </ListView>
+            
         </StackLayout>
+
     </ContentPage.Content>
+    
 </ContentPage>

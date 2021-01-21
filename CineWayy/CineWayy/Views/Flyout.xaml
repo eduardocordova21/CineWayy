@@ -2,14 +2,20 @@
 <FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CineWayy.Views.Flyout"
-            xmlns:paginas="clr-namespace:CineWayy.Views">
-    
+             xmlns:paginas="clr-namespace:CineWayy.Views"
+             NavigationPage.HasNavigationBar="False"
+             Title="PaginaFlyout">
+
     <FlyoutPage.Flyout>
         <paginas:MenuLateral />
     </FlyoutPage.Flyout>
 
     <FlyoutPage.Detail>
-        <paginas:Inicio />
+        <NavigationPage>
+            <x:Arguments>
+                <paginas:Inicio />
+            </x:Arguments>
+        </NavigationPage>
     </FlyoutPage.Detail>
 
 </FlyoutPage>
