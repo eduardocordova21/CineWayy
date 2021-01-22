@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CineWayy.ViewModels
 {
-    class MenuLateralViewModel : INotifyPropertyChanged
+    public class MenuLateralViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<MenuLateralVO> ListaIconesDosMenus { get; set; } = new ObservableCollection<MenuLateralVO>
         {
@@ -29,6 +29,15 @@ namespace CineWayy.ViewModels
                 CaminhoCompletoDoIcone = "CineWayy.Icones.iconeListaDeSalas.png"
             },
         };
+
+
+        private string usuarioLogado;
+
+        public string UsuarioLogado
+        {
+            get { return usuarioLogado; }
+            set { usuarioLogado = value; }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

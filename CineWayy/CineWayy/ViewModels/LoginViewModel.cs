@@ -9,6 +9,7 @@ namespace CineWayy.ViewModels
     class LoginViewModel : INotifyPropertyChanged
     {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
+        MenuLateralViewModel menuLateralViewModel;
 
         internal bool ValidarDadosDeLoginDoUsuario(string login, string senha)
         {
@@ -17,6 +18,7 @@ namespace CineWayy.ViewModels
 
             return false;
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

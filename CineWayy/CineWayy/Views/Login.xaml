@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CineWayy.Views.Login"
              Visual="Material"
-             xmlns:viewModel="clr-namespace:CineWayy.ViewModels"
+             xmlns:viewModelLogin="clr-namespace:CineWayy.ViewModels"
              BackgroundImageSource="imagem_de_fundo.png"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.BindingContext>
-        <viewModel:LoginViewModel />
+        <viewModelLogin:LoginViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
 
         <FlexLayout Padding="20"

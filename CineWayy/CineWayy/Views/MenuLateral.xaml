@@ -21,18 +21,27 @@
 
         <StackLayout>
 
+            <Frame BackgroundColor="#df7100">
+                <Label x:Name="LabelLoginUsuarioLogado" 
+                       Text="{Binding UsuarioLogado}"
+                       TextColor="White"
+                       FontSize="Medium" 
+                       HorizontalTextAlignment="Center"
+                       Padding="5"/>
+            </Frame>
+            
             <ListView x:Name="listView" x:FieldModifier="public" ItemsSource="{Binding ListaIconesDosMenus}">
                      
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Padding="5,10">
+                            <Grid Padding="5" VerticalOptions="CenterAndExpand">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="30" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Label Text="{Binding NomeDoMenu}"/>
-                                <Image Source="{Binding CaminhoCompletoDoIcone, Converter={StaticResource ByteArrayParaCaminhoDaImagemConverter}}"/>
+                                <Image Grid.Column="0" Aspect="AspectFit" Source="{Binding CaminhoCompletoDoIcone, Converter={StaticResource ByteArrayParaCaminhoDaImagemConverter}}"/>
+                                <Label Grid.Column="1" FontSize="Medium" TextColor="Black" Text="{Binding NomeDoMenu}"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

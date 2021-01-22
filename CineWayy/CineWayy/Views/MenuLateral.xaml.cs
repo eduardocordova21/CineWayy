@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CineWayy.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,13 @@ namespace CineWayy.Views
         public MenuLateral()
         {
             InitializeComponent();
+        }
+
+        public MenuLateralViewModel GetViewModel() => (MenuLateralViewModel)BindingContext;
+
+        private void SetUsuarioLogado(string login)
+        {
+            GetViewModel().UsuarioLogado = login;
         }
     }
 }

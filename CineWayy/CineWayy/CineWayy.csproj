@@ -11,6 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icones\iconeGerenciarFilmes.png" />
+    <None Remove="Icones\iconeGerenciarSessoes.png" />
+    <None Remove="Icones\iconeListaDeSalas.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Icones\iconeGerenciarFilmes.png" />
+    <EmbeddedResource Include="Icones\iconeGerenciarSessoes.png" />
+    <EmbeddedResource Include="Icones\iconeListaDeSalas.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
@@ -48,6 +60,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Icones\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
 </Project>

@@ -16,7 +16,7 @@ namespace CineWayy.Conversores
 
             var assembly = GetType().GetTypeInfo().Assembly;
 
-            var stream = assembly.GetFile((string)value);
+            var stream = assembly.GetManifestResourceStream((string)value);
             
             using (var memoryStream = new MemoryStream())
             {
