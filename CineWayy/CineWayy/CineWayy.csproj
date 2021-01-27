@@ -24,31 +24,28 @@
 
   <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
-    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.1874" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1931" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.1931" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Recursos\pt-BR.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>pt-BR.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Recursos\pt-BR.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>pt-BR.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\Cadastrar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Flyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\GerenciarFilmes.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\GerenciarSessoes.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Inicio.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ListaDeSalas.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Login.xaml">

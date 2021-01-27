@@ -5,7 +5,8 @@
              xmlns:conversor="clr-namespace:CineWayy.Conversores"
              xmlns:viewModel="clr-namespace:CineWayy.ViewModels"
              x:Class="CineWayy.Views.MenuLateral"
-             Title="Menu Lateral">
+             Title="Menu Lateral"
+             BackgroundColor="White">
 
     <ContentPage.BindingContext>
         <viewModel:MenuLateralViewModel/>
@@ -23,25 +24,46 @@
 
             <Frame BackgroundColor="#df7100">
                 <Label x:Name="LabelLoginUsuarioLogado" 
-                       Text="{Binding UsuarioLogado}"
+                       Text="C I N E W A Y Y"
                        TextColor="White"
-                       FontSize="Medium" 
+                       FontSize="Title"
+                       FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        Padding="5"/>
             </Frame>
-            
-            <ListView x:Name="listView" x:FieldModifier="public" ItemsSource="{Binding ListaIconesDosMenus}">
+
+            <ListView x:Name="listaDeMenus" 
+                      x:FieldModifier="public" 
+                      ItemsSource="{Binding ListaDeMenuLateral}" 
+                      RowHeight="50" 
+                      ItemSelected="NavegarParaOMenuSelecionado">
                      
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid Padding="5" VerticalOptions="CenterAndExpand">
+                                
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="30" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Aspect="AspectFit" Source="{Binding CaminhoCompletoDoIcone, Converter={StaticResource ByteArrayParaCaminhoDaImagemConverter}}"/>
-                                <Label Grid.Column="1" FontSize="Medium" TextColor="Black" Text="{Binding NomeDoMenu}"/>
+                                
+                                <Image Grid.Column="0" 
+                                       Aspect="AspectFit" 
+                                       Source="{Binding CaminhoCompletoDoIcone, Converter={StaticResource ByteArrayParaCaminhoDaImagemConverter}}"/>
+                                
+                                <Label Grid.Column="1" 
+                                       HeightRequest="50" 
+                                       VerticalTextAlignment="Start" 
+                                       FontSize="Medium" 
+                                       TextColor="Black" 
+                                       Text="{Binding NomeDoMenu}"/>
+                                
+                                <Label Grid.Column="1" 
+                                       VerticalTextAlignment="End"
+                                       FontSize="Micro" 
+                                       TextColor="Black" 
+                                       Text="{Binding DescricaoDoMenu}"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

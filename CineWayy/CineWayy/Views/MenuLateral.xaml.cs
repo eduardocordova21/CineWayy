@@ -1,4 +1,5 @@
-﻿using CineWayy.ViewModels;
+﻿using CineWayy.Modelos;
+using CineWayy.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +17,23 @@ namespace CineWayy.Views
         public MenuLateral()
         {
             InitializeComponent();
+            listaDeMenus.ItemSelected += NavegarParaOMenuSelecionado;
+        }
+
+        private void NavegarParaOMenuSelecionado(object sender, SelectedItemChangedEventArgs e)
+        {
+            var menuLateral = e.SelectedItem as MenuLateralVO;
+
+            if (menuLateral != null)
+            {
+                menuLateral.Detail = new NavigationPage((Page)Activator.CreateInstance(menuLateral.NavegarPara.GetType()));
+                listaDeMenus.SelectedItem = null;
+                menuLateral.IsPresented = false;
+            }
+
+            Navigation.PushAsync(menuLateral.NavegarPara, true);
         }
 
         public MenuLateralViewModel GetViewModel() => (MenuLateralViewModel)BindingContext;
-
-        private void SetUsuarioLogado(string login)
-        {
-            GetViewModel().UsuarioLogado = login;
-        }
     }
 }

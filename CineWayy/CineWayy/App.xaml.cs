@@ -1,7 +1,6 @@
 ﻿using CineWayy.Views;
-using System;
+using System.Globalization;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace CineWayy
 {
@@ -10,7 +9,7 @@ namespace CineWayy
         public App()
         {
             InitializeComponent();
-
+                
             MainPage = new NavigationPage(new Login());
         }
 

@@ -27,7 +27,9 @@ namespace CineWayy.Views
 
         private void BotaoEntrar_Clicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(EntradaDeLogin.Text) == false && string.IsNullOrWhiteSpace(EntradaDeSenha.Text) == false && GetViewModel().ValidarDadosDeLoginDoUsuario(EntradaDeLogin.Text, EntradaDeSenha.Text))
+            if (string.IsNullOrWhiteSpace(EntradaDeEmail.Text) == false && 
+                string.IsNullOrWhiteSpace(EntradaDeSenha.Text) == false && 
+                GetViewModel().ValidarDadosDeLoginDoUsuario(EntradaDeEmail.Text, EntradaDeSenha.Text))
                 Navigation.PushAsync(new Flyout(), true);
             else
                 DisplayAlert("AVISO", "Credenciais incorretas, por favor, tente novamente.", "Fechar");
